@@ -1,0 +1,33 @@
+{% if logged %}
+{% include 'headerLogged.html' %}
+{% else %}
+{% include 'header.html' %}
+{% endif %}
+
+<table class="table">
+    <thead>
+        <tr>
+        <tr>
+            <th>Název</th>
+            <th>Rok</th>
+            <th>Délka</th>
+            <th>Hodnocení</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody>
+        {% for film in filmList %}
+        <tr>
+            <td><a href="index.php?view=film&id={{film.idfilm}}">{{ film.nazev }}</a></td>
+            <td>{{ film.rok }}</td>
+            <td>{{ film.delka }}</td>
+            <td>{{ film.hodnoceni }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>

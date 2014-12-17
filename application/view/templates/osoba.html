@@ -1,0 +1,27 @@
+{% if logged  %}
+   {% include 'headerLogged.html' %}
+{% else %}
+   {% include 'header.html' %}
+{% endif %}
+   {% for osoby in osobyList %}
+			<h3>
+				{{ osoby.jmeno }} {{ osoby.prijmeni }}
+			</h3>
+      <br>
+      <ul>
+				  <li>Narozen: {{ osoby.narozen }}
+          {% if osoby.zemrel is not null %}
+          <li>Zemrel: {{ osoby.zemrel }}  
+          {% endif %}
+          <li>Hodnoceni: {{ osoby.hodnoceni }} 
+      </ul>
+      <br>
+			<p>
+			{{ osoby.popis }}
+			</p>
+       {% endfor %}
+		</div>
+	</div>
+</div>
+</body>
+</html>

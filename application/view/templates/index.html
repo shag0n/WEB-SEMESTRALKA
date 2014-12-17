@@ -1,0 +1,113 @@
+{% if logged %}
+{% include 'headerLogged.html' %}
+{% else %}
+{% include 'header.html' %}
+{% endif %}
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id1}}">{{ nadpis1 }}</a>
+                </h3>
+                <p>
+                    {{popis1}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id1}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id2}}">{{ nadpis2 }}</a>
+                </h3>
+                <p>
+                    {{popis2}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id2}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id3}}">{{ nadpis3 }}</a>
+                </h3>
+                <p>
+                    {{popis3}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id3}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id4}}">{{ nadpis4 }}</a>
+                </h3>
+                <p>
+                    {{popis4}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id4}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id5}}">{{ nadpis5 }}</a>
+                </h3>
+                <p>
+                    {{popis5}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id5}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            
+            <div class="caption">
+                <h3>
+                    <a href="index.php?view=film&id={{id6}}">{{ nadpis6 }}</a>
+                </h3>
+                <p>
+                    {{popis6}}
+                </p>
+                <p>
+                    <a class="btn btn-primary" href="index.php?view=film&id={{id6}}">More</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-1 column">
+</div>
+</div>
+</div>
+</body>
+</html>

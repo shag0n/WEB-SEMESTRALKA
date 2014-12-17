@@ -1,0 +1,54 @@
+{% include 'headerLogged.html' %}
+
+<form role="form" action="index.php?view=updateFilmId" method="post">
+    {% for film in filmList %} 
+    <div class="form-group">
+        <label>Nazev</label><input type="text" name="nazev" value="{{ film.nazev }}" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Rok</label><input type="number" name="rok" value="{{ film.rok }}" required class="form-control"/>
+    </div> 
+    <div class="form-group">
+        <label>Delka</label><input type="text" name="delka" value="{{ film.delka }} " required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Popis</label><input type="text" name="popis"  value="{{ film.popis }}" required class="form-control"/>
+    </div>        
+
+    <div class="form-group">
+        <label>Hodnoceni</label><input type="text" name="hodnoceni" value="{{ film.hodnoceni }}"  required class="form-control"/>
+    </div>
+    {% endfor %}
+    <div class="form-group">
+        <label>Studio</label>   <br>
+        <select name="studio">
+            {% for studio in studioList %}        
+
+            <option value="{{ studio.idstudio }}">{{ studio.nazev }}</option>
+
+            {% endfor %}  
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Zanr</label> <br>
+        <select name="zanr">
+            {% for zanr in zanrList %}        
+
+            <option value="{{ zanr.idzanr }}">{{ zanr.popis }}</option>
+
+            {% endfor %}
+
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-default">Odeslat</button>
+</form> 
+
+<br><br>
+
+</div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+{% if logged %}
+{% include 'headerLogged.html' %}
+{% else %}
+{% include 'header.html' %}
+{% endif %}
+
+<h3>
+    {{ nazev }}
+</h3>
+<br>
+<b>Scénáristé</b>
+<ul>
+    {% for osoby in scenaristeList %}
+
+    <li><a href="index.php?view=osoba&id={{osoby.idosoba}}"> {{ osoby.jmeno }} {{ osoby.prijmeni }} </a></li>
+
+    {% endfor %}
+</ul>
+<b>Režiséři</b>
+<ul>
+    {% for osoby in reziseriList %}
+
+    <li><a href="index.php?view=osoba&id={{osoby.idosoba}}"> {{ osoby.jmeno }} {{ osoby.prijmeni }} </a></li>
+
+    {% endfor %}
+</ul>
+<b>Herci</b>
+<ul>
+    {% for osoby in herciList %}
+
+    <li><a href="index.php?view=osoba&id={{osoby.idosoba}}"> {{ osoby.jmeno }} {{ osoby.prijmeni }} </a></li>
+
+    {% endfor %}
+</ul>
+<br>
+<p>
+    {{ popis }}
+</p>
+</div>
+</div>
+</div>
+</body>
+</html>

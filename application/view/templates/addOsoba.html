@@ -1,0 +1,41 @@
+{% include 'headerLogged.html' %}
+
+<form role="form" action="index.php?view=addOsoba" method="post">
+    <div class="form-group">
+        <label>Jmeno</label><input type="text" name="jmeno" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Prijmeni</label><input type="text" name="prijmeni" required class="form-control"/>
+    </div> 
+    <div class="form-group">
+        <label>Narozen</label><input type="date" name="narozen" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Zemrel</label><input type="date" name="zemrel" class="form-control"/>
+    </div>        
+
+    <div class="form-group">
+        <label>Pohlavi</label>   <br>
+        <select name="pohlavi">            
+            <option value="muz">muz</option>
+            <option value="zena">zena</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Popis</label><input type="text" name="popisOsoby" required class="form-control"/>
+    </div>
+
+    <div class="form-group">
+        <label>Hodnoceni</label><input type="text" name="hodnoceniOsoby" required class="form-control"/>
+    </div>   
+    <button type="submit" class="btn btn-default">Odeslat</button>
+</form> 
+
+<br><br>
+
+</div>
+</div>
+</div>
+</body>
+</html>

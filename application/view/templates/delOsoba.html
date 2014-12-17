@@ -1,0 +1,26 @@
+{% include 'headerLogged.html' %}
+
+<form role="form" action="index.php?view=delOsoba" method="post">
+
+    <div class="col-md-5">
+    </div>
+
+    <select name="id">
+        {% for osoba in osobaList %}        
+
+        <option value="{{ osoba.idosoba }}">{{ osoba.jmeno }} {{ osoba.prijmeni }}</option>
+
+        {% endfor %}
+    </select>
+
+    <button type="submit" class="btn btn-default">Smazat</button>    
+</form> 
+
+
+<br><br>
+
+</div>
+</div>
+</div>
+</body>
+</html>

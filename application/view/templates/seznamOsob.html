@@ -1,0 +1,33 @@
+{% if logged %}
+{% include 'headerLogged.html' %}
+{% else %}
+{% include 'header.html' %}
+{% endif %}
+
+<table class="table">
+    <thead>
+        <tr>
+        <tr>
+            <th>Jméno</th>
+            <th>Přijmení</th>
+            <th>Narozen</th>
+            <th>Hodnocení</th>
+        </tr>
+        </tr>
+    </thead>
+    <tbody>
+        {% for osoby in osobyList %}
+        <tr>
+            <td><a href="index.php?view=osoba&id={{osoby.idosoba}}">{{ osoby.jmeno }}</a></td>
+            <td><a href="index.php?view=osoba&id={{osoby.idosoba}}">{{ osoby.prijmeni }}</a></td>
+            <td>{{ osoby.narozen }}</td>
+            <td>{{ osoby.hodnoceni }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</body>
+</html>
