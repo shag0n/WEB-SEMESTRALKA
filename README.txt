@@ -10,3 +10,4 @@ img        Obrázky
 font       Pomocné fonty 
 nbproject      Soubory NetBeans
 js       javascript soubory 
+sql	 Soubory SQL
