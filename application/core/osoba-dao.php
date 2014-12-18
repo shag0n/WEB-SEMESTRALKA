@@ -204,6 +204,14 @@ class OsobaDao extends db {
         $this->DBInsertExpanded('osoba', $item);
     }
 
+     public function updateOsoba($osoba, $id) {
+        $table_name = "osoba";
+        $where_array = array(array('column' => 'idosoba', 'value' => $id, 'symbol' => '='));
+        $update_string = "jmeno='$osoba->jmeno', prijmeni='$osoba->prijmeni', narozen='$osoba->narozen', zemrel='$osoba->zemrel', pohlavi='$osoba->pohlavi', popisosoby='$osoba->popis', hodnoceniosoby='$osoba->hodnoceni'";
+
+        $this->DBUpdate($table_name, $update_string, $where_array);
+    }   
+    
 }
 
 ?>

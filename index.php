@@ -124,6 +124,28 @@ switch (@$_GET['view']) {
 
         break;
 
+    case 'updateOsoba':
+        kontrolaPrihlaseni();
+        $osobaList = $osoby->getOsobyAll();
+        echo $twig->render('updateOsoba.html', array('osobaList' => $osobaList));
+
+
+        break;
+
+    case 'updateOsobaId':
+        kontrolaPrihlaseni();
+        if (empty($_POST['jmeno'])) {
+            $_SESSION['idOsoba'] = $_POST['id'];
+            $osobaList[0] = $osoby->getOsobaById($_POST['id']);
+            echo $twig->render('updateOsobaId.html', array('osobaList' => $osobaList));
+        } else {
+            $osoba = zalozOsobu(0, $_POST['jmeno'], $_POST['prijmeni'], $_POST['narozen'], $_POST['zemrel'], $_POST['pohlavi'], $_POST['popis'], $_POST['hodnoceni']);
+            $osoby->updateOsoba($osoba, $_SESSION['idOsoba']);
+            echo $twig->render('zprava.html', array('zprava' => "Osoba upravena"));
+        }
+
+        break;
+
     case 'addOsoba':
         kontrolaPrihlaseni();
         if (empty($_POST['jmeno'])) {
@@ -167,7 +189,87 @@ switch (@$_GET['view']) {
             echo $twig->render('zprava.html', array('zprava' => "Studio smazáno"));
         }
         break;
+
+
+    case 'addHraje':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+
+             $filmList = $filmy->getFilms();
+        echo $twig->render('addHraje.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {
+            
+            $filmy->addHraje($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Pridano"));
+        }
+        break;
         
+        case 'addNapsal':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+
+             $filmList = $filmy->getFilms();
+        echo $twig->render('addNapsal.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {
+            
+            $filmy->addNapsal($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Pridano"));
+        }
+        break;
+        
+        case 'addReziruje':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+
+             $filmList = $filmy->getFilms();
+        echo $twig->render('addReziruje.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {
+            
+            $filmy->addReziruje($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Pridano"));
+        }
+        break;
+
+        
+        case 'delHraje':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+             $filmList = $filmy->getFilms();
+        echo $twig->render('delHraje.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {      
+            $filmy->delHraje($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Smazano"));
+        }
+        break;
+        
+        case 'delReziruje':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+             $filmList = $filmy->getFilms();
+        echo $twig->render('delReziruje.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {      
+            $filmy->delReziruje($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Smazano"));
+        }
+        break;
+        
+        case 'delNapsal':
+        kontrolaPrihlaseni();
+        if (empty($_POST['idOsoba'])) {
+            $osobaList = $osoby->getOsobyAll();
+             $filmList = $filmy->getFilms();
+        echo $twig->render('delNapsal.html', array('filmList' => $filmList,'osobaList'=> $osobaList,));
+        } else {      
+            $filmy->delNapsal($_POST['idOsoba'], $_POST['idFilm']);
+            echo $twig->render('zprava.html', array('zprava' => "Smazano"));
+        }
+        break;
+
     case 'login':
         echo $twig->render('login.html');
 

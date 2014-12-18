@@ -222,6 +222,50 @@ class FilmsDao extends db {
         $this->DBUpdate($table_name, $update_string, $where_array);
     }
 
+    
+    public function addHraje($idHerec, $idFilm) {
+        $item = array(
+            array('column' => 'herec_idherec', 'value' => $idHerec),
+            array('column' => 'film_idfilm', 'value' => $idFilm));
+            
+        $this->DBInsertExpanded('hraje', $item);
+    }
+    
+    public function addReziruje($idreziser, $idFilm) {
+        $item = array(
+            array('column' => 'osoba_idosoba', 'value' => $idreziser),
+            array('column' => 'film_idfilm', 'value' => $idFilm));
+            
+        $this->DBInsertExpanded('reziruje', $item);
+    }
+    
+    public function addNapsal($idHerec, $idFilm) {
+        $item = array(
+            array('column' => 'osoba_idosoba', 'value' => $idHerec),
+            array('column' => 'film_idfilm', 'value' => $idFilm));
+            
+        $this->DBInsertExpanded('napsal', $item);
+    }
+    
+    public function delHraje($idHerec, $idFilm) {
+         $where_array = array(array("column" => "herec_idherec", "value" => "$idHerec", "symbol" => "="),array("column" => "film_idfilm", "value" => "$idFilm", "symbol" => "="));
+  
+        $this->DBDelete('hraje', $where_array);
+    }
+    
+    public function delReziruje($idreziser, $idFilm) {
+        
+        $where = array(array('column' => 'osoba_idosoba', 'value' => $idreziser, 'symbol' => '='),array('column' => 'film_idfilm', 'value' => $idFilm, 'symbol' => '='));
+            
+        $this->DBDelete('reziruje', $where);
+    }
+    
+    public function delNapsal($idHerec, $idFilm) {
+        $where = array(array('column' => 'osoba_idosoba', 'value' => $idHerec, 'symbol' => '='),array('column' => 'film_idfilm', 'value' => $idFilm, 'symbol' => '='));
+            
+        $this->DBDelete('napsal', $where);
+    }
+    
 }
 
 ?>

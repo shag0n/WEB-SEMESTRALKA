@@ -136,6 +136,9 @@ class __TwigTemplate_031906c707dc2e7899ea9d914bf5464a28f0dfd5cf5884a83d055048435
                                         <li>
                                             <a href=\"index.php?view=delOsoba\">Smazat osobu</a>
                                         </li>
+                                        <li>
+                                            <a href=\"index.php?view=updateOsoba\">Upravit osobu</a>
+                                        </li>
                                         <li class=\"divider\">
                                         </li>
                                         <li>
@@ -143,6 +146,26 @@ class __TwigTemplate_031906c707dc2e7899ea9d914bf5464a28f0dfd5cf5884a83d055048435
                                         </li>
                                         <li>
                                             <a href=\"index.php?view=delStudio\">Smazat studio</a>
+                                        </li>
+                                        <li class=\"divider\">
+                                        </li>
+                                         <li>
+                                            <a href=\"index.php?view=addHraje\">Pridat hraje</a>
+                                        </li>
+                                         <li>
+                                            <a href=\"index.php?view=addReziruje\">Pridat reziruje</a>
+                                        </li>
+                                         <li>
+                                            <a href=\"index.php?view=addNapsal\">Pridat napsal</a>
+                                        </li>
+                                         <li>
+                                            <a href=\"index.php?view=delHraje\">Smazat hraje</a>
+                                        </li>
+                                        <li>
+                                            <a href=\"index.php?view=delReziruje\">Smazat reziruje</a>
+                                        </li>
+                                        <li>
+                                            <a href=\"index.php?view=delNapsal\">Smazat napsal</a>
                                         </li>
                                     </ul>
                                 </li>          

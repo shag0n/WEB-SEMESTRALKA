@@ -1,0 +1,40 @@
+{% include 'headerLogged.html' %}
+
+<form role="form" action="index.php?view=updateOsobaId" method="post">
+    {% for osoba in osobaList %} 
+    <div class="form-group">
+        <label>Jmeno</label><input type="text" name="jmeno" value="{{ osoba.jmeno }}" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Prijmeni</label><input type="text" name="prijmeni" value="{{ osoba.prijmeni }}" required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Narozen</label><input type="text" name="narozen" value="{{ osoba.narozen }} " required class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Zemrel</label><input type="text" name="zemrel"  value="{{ osoba.zemrel }}" class="form-control"/>
+    </div>        
+    <div class="form-group">
+        <label>Pohlavi</label><input type="text" name="pohlavi"  value="{{ osoba.pohlavi }}" required class="form-control"/>
+    </div> 
+    <div class="form-group">
+        <label>Popis</label><input type="text" name="popis"  value="{{ osoba.popis }}" required class="form-control"/>
+    </div> <div class="form-group">
+        <label>Hodnoceni</label><input type="text" name="hodnoceni"  value="{{ osoba.hodnoceni }}" required class="form-control"/>
+    </div> 
+
+            {% endfor %}
+
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-default">Odeslat</button>
+</form> 
+
+<br><br>
+
+</div>
+</div>
+</div>
+</body>
+</html>

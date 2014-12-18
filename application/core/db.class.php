@@ -139,6 +139,7 @@ class db {
 
 
 
+
                     
 //echo "`$column` $symbol  $value_pom ";
                 $where_pom .= "$column $symbol  $value_pom ";
@@ -381,11 +382,6 @@ class db {
                     $value_pom = $item["value_mysql"];   // je to systemove, vlozit rovnou - POZOR na SQL injection, tady to muze projit
 
 
-
-
-
-
-
                     
 //echo "`$column` $symbol  $value_pom ";
                 $where_pom .= "`$column` $symbol  $value_pom ";
@@ -408,10 +404,10 @@ class db {
             foreach ($where_array as $index => $item) {
                 if (key_exists("value", $item)) {
                     $value = $item["value"];
-                    //echo "navazuju value: $value";
+                    //echo "navazuju value: $value jako number: $bind_param_number";
 
                     $statement->bindValue($bind_param_number, $value);  // vzdy musim dat value, abych si nesparoval promennou (to nechci)
-                    //$bind_param_number ++;
+                    $bind_param_number ++;
                 }
             }
 
@@ -421,6 +417,7 @@ class db {
         // 5) kontrola chyb
         $errors = $statement->errorInfo();
         //printr($errors);
+       // printr($query);
 
         if ($errors[0] + 0 > 0) {
             // nalezena chyba
